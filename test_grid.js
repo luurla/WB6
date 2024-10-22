@@ -104,13 +104,25 @@ Promise.all([
   gridElem.innerHTML = innerHTML;
 
   document.querySelector(".overview").addEventListener("click", (e) => {
+    console.log("overview click", document.querySelectorAll(".item"));
 
     document.querySelectorAll(".item").forEach((item) => {
+     // console.log("---item",item);
       item.classList.remove("active");
       item.classList.remove("non-active");
       item.classList.remove("newItem");
     item.classList.add("item");
     });
+
+    document.querySelectorAll(".newItem").forEach((item) => {
+      // console.log("---item",item);
+
+       item.classList.remove("active");
+       item.classList.remove("non-active");
+       item.classList.remove("newItem");
+       item.querySelector(".inner-item").classList.remove("active");
+     item.classList.add("item");
+     });
 
     document.querySelectorAll(".subgrid").forEach((subgrid) => {
       subgrid.classList.remove("hidden");
@@ -160,7 +172,7 @@ Promise.all([
 
       // Extrahieren Sie die ID des Eltern-Elements
       const parentID = e.target.closest(".item").id;
-      console.log(parentID);
+      console.log("parent id",parentID);
 
       // Fügen Sie die Klasse zum Element mit der ID hinzu
       document.querySelector(".subdimension-title-" + parentID).classList.add("show");

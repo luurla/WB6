@@ -346,3 +346,19 @@ h1 {
 .non-active {
   display: none !important;
 }
+
+@media screen and (max-width: 100vw) {
+  .navi {
+          font-size: 1em;
+      }
+  }
+  @media screen and (max-width: 30vw) {
+    .navi  {
+          font-size: 0.5em;
+      }
+  }
+  @media screen and (max-width: 20vw){
+    .navi  {
+          font-size:0.02em;
+      }
+  }
